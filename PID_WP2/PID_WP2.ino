@@ -42,10 +42,10 @@ int angle1 = 0; // variable to store the angle of the potentiometer
 // int throttleValue2 = 0; // variable to store the servo position
 int angle2 = 0; // variable to store the angle of the potentiometer
 
-int L1 = 20 ;//midpoint
-int L2 = 10 ;//midpoint
+int L1 = 30 ;//midpoint
+int L2 = 24 ;//midpoint
 // PID configuration parameters
-double kp = 3, ki = 0.00, kd = 0, input = 0, output = 0, setpoint = 1;
+double kp = 3, ki = 0.3, kd = 0, input = 0, output = 0, setpoint = 1;
 PID myPID(&input, &output, &setpoint, kp, ki, kd, DIRECT);
 
 // ******************************************
@@ -70,11 +70,11 @@ void setup()
 
     // ESC & motor setup
   esc1.attach(PIN_ESC1,1000,2000); 
-  // esc1.write(1); // Initialize the ESC at minimum angel (adjust if needed)
+  esc1.write(1); // Initialize the ESC at minimum angel (adjust if needed)
 
   // ESC & motor setup
   esc2.attach(PIN_ESC2,1000,2000); 
-  // esc2.write(1); // Initialize the ESC at minimum angel (adjust if needed)
+  esc2.write(1); // Initialize the ESC at minimum angel (adjust if needed)
 
   myPID.SetMode(AUTOMATIC);
   myPID.SetSampleTime(50); // Set the sample time for the PID control
@@ -178,12 +178,12 @@ void SerialDataWrite()
   Serial.print(Total_angle[1]);
   Serial.print(",");
   Serial.print(Total_angle[2]);
-   Serial.print(",");
-  Serial.print(angle1);
-   Serial.print(",");
-  Serial.print(angle2);
-  Serial.print(",");
-  Serial.print(output);
+  //  Serial.print(",");
+  // Serial.print(angle1);
+  //  Serial.print(",");
+  // Serial.print(angle2);
+  // Serial.print(",");
+  // Serial.print(output);
   Serial.println("");
 }
 
