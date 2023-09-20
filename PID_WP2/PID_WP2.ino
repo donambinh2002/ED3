@@ -42,10 +42,10 @@ int angle1 = 0; // variable to store the angle of the potentiometer
 // int throttleValue2 = 0; // variable to store the servo position
 int angle2 = 0; // variable to store the angle of the potentiometer
 
-int L1 = 15 ;//midpoint
-int L2 = 10 ;//midpoint
+int L1 = 30 ;//midpoint
+int L2 = 25 ;//midpoint
 // PID configuration parameters
-double kp = 3, ki = 0.3, kd = 0.5, input = 0, output = 0, setpoint = 1;
+double kp = 3, ki = 0.3, kd = 0.3, input = 0, output = 0, setpoint = 1;
 PID myPID(&input, &output, &setpoint, kp, ki, kd, DIRECT);
 
 // ******************************************
